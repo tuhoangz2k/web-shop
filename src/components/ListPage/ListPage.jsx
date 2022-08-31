@@ -6,8 +6,8 @@ ListPage.propTypes = {};
 function ListPage(props) {
     useEffect(() => {
         async function fetchProducts() {
-            const data = await productApi.getAll();
-            console.log(data);
+            // const data = await productApi.getAll();
+            // console.log(data);
         }
         fetchProducts();
     }, []);
