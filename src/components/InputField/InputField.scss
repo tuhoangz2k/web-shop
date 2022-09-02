@@ -1,0 +1,22 @@
+.form-control {
+    display: flex;
+    flex-direction: column;
+    input {
+        margin-top: 4px;
+        border: 1px solid #888;
+        padding: 8px 20px;
+        outline: none;
+        font-size: 1.6rem;
+    }
+}
+.form-control + .form-control {
+    margin-top: 10px;
+}
+.form-control.error {
+    p {
+        color: red;
+    }
+    input {
+        border: 1px solid red;
+    }
+}

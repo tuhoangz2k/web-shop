@@ -8,14 +8,16 @@ function App() {
     return (
         <div className="App">
             <Header />
-            <main className="wrapper grid wide">
-                <Routes>
-                    <Route path="/" element={<Navigate to="/products" replace={true} />} />
-                    <Route path="products" element={<Products />}>
-                        <Route index element={<ListPage />} />
-                        <Route path=":id" element={<ProductDetail />} />
-                    </Route>
-                </Routes>
+            <main className="grid wide">
+                <div className="m-t-header">
+                    <Routes>
+                        <Route path="/" element={<Navigate to="/products" replace={true} />} />
+                        <Route path="products" element={<Products />}>
+                            <Route index element={<ListPage />} />
+                            <Route path=":id" element={<ProductDetail />} />
+                        </Route>
+                    </Routes>
+                </div>
             </main>
             <Footer />
         </div>

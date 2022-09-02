@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&display=swap');
 
 :root {
+    --header__height: 100px;
 }
 html {
     font-size: 62.5%;
@@ -17,6 +18,10 @@ body {
 }
 ul {
     list-style: none;
+}
+
+.m-t-header {
+    margin-top: var(--header__height);
 }
 
 a {
