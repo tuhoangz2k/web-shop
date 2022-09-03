@@ -1,17 +1,25 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 import productApi from '../../api/productApi';
-ListPage.propTypes = {};
+import Category from '../Category';
 
-function ListPage(props) {
+function ListPage() {
+    const [productList, setProductList] = useState([]);
     useEffect(() => {
         async function fetchProducts() {
-            // const data = await productApi.getAll();
-            // console.log(data);
+            const data = await productApi.getAll();
+            setProductList(data);
         }
         fetchProducts();
     }, []);
-    return <div>ListPage</div>;
+    console.log(productList);
+    return (
+        <div className="row">
+            <div className="l-3">
+                <Category />
+            </div>
+            <div className="l-9">ListPage</div>
+        </div>
+    );
 }
 
 export default ListPage;

@@ -4,11 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import './Header.scss';
 import Register from '../Auth/components/Register';
+import Login from '../Auth/components/Login/Login';
 
 function Header(props) {
     const [hasProduct, setProduct] = useState(1);
     const [showMenu, setShowMenu] = useState(false);
     const [showRigister, setShowRigister] = useState(false);
+    const [showLogin, setShowLogin] = useState(false);
+
     return (
         <div className="header">
             <div className="grid wide">
@@ -31,8 +34,22 @@ function Header(props) {
                         <li className="header__item">
                             <Link to="/">Contact</Link>
                         </li>
-                        <li className="header__item">Login</li>
-                        <li className="header__item" onClick={() => setShowRigister(!showRigister)}>
+                        <li
+                            className="header__item"
+                            onClick={() => {
+                                setShowLogin(!showLogin);
+                                setShowMenu(false);
+                            }}
+                        >
+                            Login
+                        </li>
+                        <li
+                            className="header__item"
+                            onClick={() => {
+                                setShowRigister(!showRigister);
+                                setShowMenu(false);
+                            }}
+                        >
                             Rigister
                         </li>
                     </ul>
@@ -47,6 +64,7 @@ function Header(props) {
             </div>
 
             {showRigister && <Register onClick={setShowRigister} />}
+            {showLogin && <Login onClick={setShowLogin} />}
         </div>
     );
 }
