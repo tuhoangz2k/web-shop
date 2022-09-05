@@ -32,6 +32,7 @@
         font-size: 1.8rem;
         color: #555;
         cursor: pointer;
+        position: relative;
     }
 
     &__cart {
@@ -62,6 +63,27 @@
         font-size: 30px;
         margin-left: 24px;
         cursor: pointer;
+    }
+    .account {
+        font-size: 1.8rem;
+        border-radius: 4px;
+
+        &__list {
+            display: none;
+            width: 100%;
+            min-width: 100px;
+            font-size: 1.4rem;
+            position: absolute;
+            top: 100%;
+            left: -40px;
+            background-color: #fff;
+        }
+        &__item {
+            padding: 10px;
+        }
+    }
+    .account:hover .account__list {
+        display: block !important;
     }
 }
 @keyframes FadeIn {
@@ -105,6 +127,16 @@
         }
         &__list.hidden {
             display: none;
+        }
+        .account {
+            &__list {
+                background-color: #333;
+                right: 0;
+                left: unset;
+                width: 50%;
+            }
+            &__item {
+            }
         }
     }
 }

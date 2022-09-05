@@ -1,10 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as starRegular } from '@fortawesome/free-regular-svg-icons';
+import { useNavigate } from 'react-router-dom';
 import './Product.scss';
 import React from 'react';
 
 function Product({ product }) {
+    const navigate = useNavigate();
     const truncString = (str, number) => {
         if (str.length > number) {
             return str.slice(0, number);
@@ -25,7 +27,7 @@ function Product({ product }) {
         );
     };
     return (
-        <div className="l-3 m-4 col c-12 product">
+        <div className="l-3 m-4 col c-12 product" onClick={() => navigate(`${product.id}`)}>
             <div className="product__imgwrap">
                 <img src={product.image} className="product__img" alt="" />
             </div>
