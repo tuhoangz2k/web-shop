@@ -8,6 +8,12 @@ const procductApi = {
         const url = `/products/${id}`;
         return axiosClient.get(url);
     },
+    sort(sort) {
+        const url = `/products/`;
+        return axiosClient.get(url, {
+            params: { sort },
+        });
+    },
 };
 
 export default procductApi;
