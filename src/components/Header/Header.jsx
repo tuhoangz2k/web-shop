@@ -23,13 +23,13 @@ function Header(props) {
         <div className="header">
             <div className="grid wide">
                 <div className="header__container row">
-                    <div className="header__logo">
+                    <Link to="/" className="header__logo">
                         <img
                             className="header__image"
                             src="https://phuongnam24h.com/img_data/images/logo-shop-quan-ao-nu.jpg"
                             alt="logo"
                         />
-                    </div>
+                    </Link>
 
                     <ul className={`header__list ${showMenu ? '' : 'hidden'}`}>
                         <li className="header__item">
@@ -76,10 +76,10 @@ function Header(props) {
                             </li>
                         )}
                     </ul>
-                    <span className="header__cart">
+                    <Link to="/cart" className="header__cart">
                         <FontAwesomeIcon icon={faCartShopping} />
                         {hasProduct > 0 && <span className="header__quantity">{hasProduct}</span>}
-                    </span>
+                    </Link>
                     <span className="header__menu l-0" onClick={() => setShowMenu((prev) => !prev)}>
                         <FontAwesomeIcon icon={faBars} />
                     </span>

@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Products from './page/Products';
 import ProductDetail from './page/ProductDetail';
 import ListPage from './components/ListPage/ListPage';
+import Cart from './page/Cart';
 function App() {
     return (
         <div className="App">
@@ -16,6 +17,7 @@ function App() {
                             <Route index element={<ListPage />} />
                             <Route path=":id" element={<ProductDetail />} />
                         </Route>
+                        <Route path="cart" element={<Cart />} />
                     </Routes>
                 </div>
             </main>

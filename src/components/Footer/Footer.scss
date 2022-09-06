@@ -1,0 +1,35 @@
+.footer {
+    padding: 60px 0 20px 0;
+    background: #000;
+    color: #8a8a8a;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    h3 {
+        color: #fff;
+        margin-bottom: 20px;
+    }
+    p {
+        margin-bottom: 20px;
+    }
+    &__download {
+        overflow: hidden;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        img {
+            width: 45%;
+            background: #fff;
+            border-radius: 5px;
+        }
+    }
+    &__logo {
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        img {
+            height: 60px;
+        }
+    }
+}
