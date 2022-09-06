@@ -1,6 +1,21 @@
 $item-height: 80px;
 
 .cart {
+    &__header {
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h3 {
+            display: inline-block;
+            margin-right: auto;
+        }
+        p {
+            display: inline-block;
+            margin-right: 50px;
+            cursor: pointer;
+        }
+    }
     &__container-nocart {
         display: flex;
         align-items: center;
@@ -54,8 +69,12 @@ $item-height: 80px;
 
     &__container {
         display: flex;
+        margin-top: 20px;
         justify-content: space-between;
         align-items: center;
+    }
+    &__delete {
+        cursor: pointer;
     }
     &__item {
         width: 260px;
@@ -82,8 +101,58 @@ $item-height: 80px;
     &__total {
         color: var(--primary-color);
     }
+    &__action-mobile {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+        display: flex;
+        font-size: 2.2rem;
+        background-color: #fff;
+        color: var(--primary-color);
+        p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60%;
+        }
+        .cart__btn--buy {
+            width: 40%;
+            height: 100%;
+        }
+    }
 }
 
 .min-h {
     min-height: 50vh;
+}
+@media (min-width: 740px) {
+    .hideTablet {
+        display: none;
+    }
+}
+@media (max-width: 739px) {
+    .cart {
+        &__container {
+            // flex-direction: column;
+            // align-items: flex-start;
+        }
+        &__item {
+            width: 180px;
+            p {
+                width: 100px;
+            }
+        }
+        .hideOnMobile {
+            display: none;
+        }
+        &__container-nocart {
+            width: 100%;
+        }
+        &__action {
+            margin: 0 10px;
+            flex: 1;
+        }
+    }
 }
