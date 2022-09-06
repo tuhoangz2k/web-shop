@@ -33,3 +33,11 @@
         }
     }
 }
+@media (max-width: 739px) {
+    .footer {
+        text-align: center;
+        &__logo {
+            margin-top: 20px;
+        }
+    }
+}

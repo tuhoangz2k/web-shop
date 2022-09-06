@@ -6,10 +6,10 @@ import './Header.scss';
 import Register from '../Auth/components/Register';
 import Login from '../Auth/components/Login/Login';
 import { useSelector, useDispatch } from 'react-redux';
-import { isLoginSelector } from '../../redux/selectors';
+import { isLoginSelector, cartQuantity } from '../../redux/selectors';
 import { logout } from '../Auth/components/Login/loginSlice';
 function Header(props) {
-    const [hasProduct, setProduct] = useState(1);
+    const countCartItem = useSelector(cartQuantity);
     const [showMenu, setShowMenu] = useState(false);
     const [showRigister, setShowRigister] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
@@ -78,7 +78,7 @@ function Header(props) {
                     </ul>
                     <Link to="/cart" className="header__cart">
                         <FontAwesomeIcon icon={faCartShopping} />
-                        {hasProduct > 0 && <span className="header__quantity">{hasProduct}</span>}
+                        {countCartItem > 0 && <span className="header__quantity">{countCartItem}</span>}
                     </Link>
                     <span className="header__menu l-0" onClick={() => setShowMenu((prev) => !prev)}>
                         <FontAwesomeIcon icon={faBars} />

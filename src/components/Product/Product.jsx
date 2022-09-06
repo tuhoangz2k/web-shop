@@ -27,7 +27,7 @@ function Product({ product }) {
         );
     };
     return (
-        <div className="l-3 m-4 col c-12 product" onClick={() => navigate(`${product.id}`)}>
+        <div className="l-3 m-4 col c-12 product" onClick={() => navigate(`/products/${product.id}`)}>
             <div className="product__imgwrap">
                 <img src={product.image} className="product__img" alt="" />
             </div>
