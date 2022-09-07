@@ -18,7 +18,6 @@ function Header(props) {
     const handleLogout = () => {
         dispatch(logout());
     };
-    console.log(isLogin);
     return (
         <div className="header">
             <div className="grid wide">
